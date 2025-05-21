@@ -12,8 +12,8 @@ const GameCard = ({ game }: Props) => {
   return (
     <Card>
       <Image src={getCroppedImageUrl(game.background_image, "media/")} />
-      <CardBody>
-        <Heading fontSize={"xl"} textAlign={"center"}>
+      <CardBody padding={"10px"}>
+        <Heading fontSize={"md"} textAlign={"center"} marginY={"10px"}>
           {game.name}
         </Heading>
         <HStack justifyContent="space-between">
