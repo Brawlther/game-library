@@ -3,7 +3,6 @@ import useGames, { type Platform } from "../hooks/useGames";
 import GameCard from "./GameCard";
 import GameCardSkeleton from "./GameCardSkeleton";
 import GameCardContainer from "./GameCardContainer";
-import type { Genre } from "../hooks/useGenres";
 import type { GameQuery } from "../App";
 
 interface Props {
@@ -12,7 +11,7 @@ interface Props {
 
 const GameGrid = ({ gameQuery }: Props) => {
   const { data, error, isLoading } = useGames(gameQuery);
-  const skeletons = [1, 2, 3, 4, 5, 6, 7, 8];
+  const skeletons = Array.from({ length: 8 }, (_, i) => i + 1);
   return (
     <>
       {error && <Text>{error}</Text>}
